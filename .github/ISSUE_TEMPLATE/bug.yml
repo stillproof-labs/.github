@@ -1,0 +1,32 @@
+name: Bug
+description: Something verifies that shouldn't, fails that shouldn't, or crashes.
+labels: [bug]
+body:
+  - type: markdown
+    attributes:
+      value: "A receipt that verifies but shouldn't is a security issue: report it privately (Security tab of the repository), not here."
+  - type: dropdown
+    id: repo
+    attributes:
+      label: Component
+      options: [stillproof (spec, CLI, web verifier), stillproof-anchor (anchoring service), stillproof-app (capture app)]
+    validations:
+      required: true
+  - type: textarea
+    id: what
+    attributes:
+      label: What happened
+      description: Command, request or steps, the input, and the output.
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: What you expected
+    validations:
+      required: true
+  - type: input
+    id: version
+    attributes:
+      label: Version
+      placeholder: commit, app version, or device and OS
